@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Earthquake Explorer </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-default grad1">
+    <div class="container" >
+      <div class="navbar-header">
+        <a class="navbar-brand" style="color:white;" href="#">
+        <span><img  id ="logo" src="logo1.png"></img></span><label id="brand">Earthquake Explorer</label> </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <div class="container" id="mainContainer">
+      <form class="form-inline">
+        <div class="form-group">
+          <label >Start Date</label>
+          <div class='input-group date' id='startDate'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group" id="endDateGroup">
+          <label >End Date</label>
+          <div class='input-group date' id='endDate'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group" id="magGroup">
+          <label>Magnitude</label>
+            <a href="#" data-toggle="popover" title="Earthquake Magnitude Scale" data-trigger="focus" ><span class="glyphicon glyphicon-info-sign" style="margin-right:10px"></span>
+            </a>
+          <div class="input-group" >
+             <span class="input-group-btn" id="minusBtn">
+                 <button type="button btn-block" class="btn  btn-default btn-number"  data-type="minus" data-field="quant[2]">
+                    <span class="glyphicon glyphicon-minus"></span>
+                 </button>
+             </span>
+             <input type="text" name="quant[2]" id ="magnitudeInput" class="form-control input-number" value="5" min="1" max="8">
+             <span class="input-group-btn" id="plusBtn">
+                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                 </button>
+             </span>
+           </div>
+           </div>
+           <button id="searchBtn" type="button" title="Search up to 1000 " onclick="searchEarthquake()" data-toogle="tooltip" data-placement="bottom" class="btn btn-secondary pull-right btn-primary ">
+             <span class="glyphicon glyphicon-search"></span>
+
+           </button>
+      </form>
+   <hr>
+   <div class="row">
+     <div class="col-md-12">
+       <div id="map"></div>
+     </div>
+   </div>
+</main>
+
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt_W8eZjMcOG03ERAjB3nXsbyYvlqs5G8&callback=initMap" async defer></script>
+
+  <script>
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+@media only screen and (max-width: 480px) {
+
+  #brand{
+    display:none;
+  }
+  #logo{
+    display:block;
+  }
+    hr{
+      height: 1px;
+      color:white;
+      background-color:white;
+      border: none;
+      margin-top:65px;
+
+    }
+
+}
+
+@media only screen and (min-width: 480px) {
+
+    #brand{
+      font-size:10px;
+    }
+    #logo{
+      display:none;
+    }
+    hr{
+      height: 1px;
+      color:white;
+      background-color:white;
+      border: none;
+      margin-top:65px;
+
+    }
+
+}
+@media only screen and (min-width: 768px)
+  {
+    .form-group >label{
+      font-size:14px;
+    }
+
+    #magnitudeInput{
+      width:40px;
+    }
+
+    #endDateGroup{
+        margin-left:-10px;
+    }
+    #startDate{
+      width:130px;
+    }
+    #endDate{
+      width:130px;
+    }
+
+
+  }
+
+
+@media only screen and (min-width: 1200px) {
+
+
+  .form-group >label{
+    margin-left:30px;
+  }
+  .form-group >.input-group{
+    margin-left:20px;
+    margin-right:20px;
+  }
+
+  #startDate{
+    width:150px;
+  }
+  #endDate{
+    width:150px;
+  }
+
+  #magnitudeInput{
+    width:150px;
+  }
+
+  }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+
+  }
+
+label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+    padding-right :15px;
+    padding-left :15px;
+
+ }​
+
+ h2{
+   text-align: center;
+   font-family: 'Source Sans Pro', sans-serif;
+ }
+
+ hr {
+   height: 1px;
+   color:#004e92;
+   background-color:#004e92;
+   border: none;
+ }
+
+
+ table, td, th {
+     border: 1px solid #ddd;
+     text-align: left;
+ }
+
+ table {
+     border-collapse: collapse;
+     width: 100%;
+ }
+
+ th, td {
+     padding: 15px;
+ }
+
+.grad1 {
+     background: #000428; /* For browsers that do not support gradients */
+     background: -webkit-linear-gradient(#000428, #004e92); /* For Safari 5.1 to 6.0 */
+     background: -o-linear-gradient(#000428, #004e92); /* For Opera 11.1 to 12.0 */
+     background: -moz-linear-gradient(#000428, #004e92); /* For Firefox 3.6 to 15 */
+     background: linear-gradient(#000428, #004e92); /* Standard syntax (must be last) */
+ }
+
+.popover{
+       max-width:600px;
+}
+
+.navbar-brand {
+     transform: translateX(-50%);
+     left: 50%;
+     position: absolute;
+}
+
+#map {
+      height: 600px;
+}
+
+#searchBtn:hover .tooltiptext {
+    visibility: visible;
+}
