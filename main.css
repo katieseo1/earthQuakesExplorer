@@ -57,7 +57,14 @@
     #endDate{
       width:130px;
     }
+    hr{
+      height: 1px;
+      color:white;
+      background-color:white;
+      border: none;
+      margin-top:25px;
 
+    }
 
   }
 
