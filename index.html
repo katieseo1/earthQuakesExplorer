@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,70 +12,123 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-default grad1">
-    <div class="container" >
+<body >
+  <nav class="navbar navbar-default navColor">
+    <div class="container-fluid" >
       <div class="navbar-header">
-        <a class="navbar-brand" style="color:white;" href="#">
-        <span><img  id ="logo" src="logo1.png"></img></span><label id="brand">Earthquake Explorer</label> </a>
+        <button  type="button" class=" navbar-toggle collapsed btn-primary" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       <span class="glyphicon glyphicon-search "></span>
+
+     </button>
+     <a class="navbar-brand" href="/main/" style="color:white;">
+   <img class="img-responsive"  src="logo.png" alt="logo" />
+   Earthquake Explorer
+</a>
+
       </div>
-    </div>
-  </nav>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-
-  <main>
-    <div class="container" id="mainContainer">
-      <form class="form-inline">
+      <ul class="nav navbar-nav navbar-right">
+     <li>
+      <form class="form-inline" style="margin-bottom:10px;">
         <div class="form-group">
           <label >Start Date</label>
-          <div class='input-group date' id='startDate'>
-            <input type='text' class="form-control" />
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+            <div class='input-group date dateDisplay' id='startDate'>
+              <input type='text' class="form-control dateDisplay" />
+                <span class="input-group-addon">
+                  <span class="glyphicon appColor glyphicon-calendar"></span>
+                </span>
+              </div>
           </div>
-        </div>
-
-        <div class="form-group" id="endDateGroup">
-          <label >End Date</label>
-          <div class='input-group date' id='endDate'>
-            <input type='text' class="form-control" />
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-          </div>
-        </div>
-
-        <div class="form-group" id="magGroup">
-          <label>Magnitude</label>
-            <a href="#" data-toggle="popover" title="Earthquake Magnitude Scale" data-trigger="focus" ><span class="glyphicon glyphicon-info-sign" style="margin-right:10px"></span>
-            </a>
-          <div class="input-group" >
-             <span class="input-group-btn" id="minusBtn">
-                 <button type="button btn-block" class="btn  btn-default btn-number"  data-type="minus" data-field="quant[2]">
-                    <span class="glyphicon glyphicon-minus"></span>
-                 </button>
-             </span>
-             <input type="text" name="quant[2]" id ="magnitudeInput" class="form-control input-number" value="5" min="1" max="8">
-             <span class="input-group-btn" id="plusBtn">
-                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
-                        <span class="glyphicon glyphicon-plus"></span>
-                 </button>
-             </span>
+        </form>
+      </li>
+      <li>
+       <form class="form-inline">
+         <div class="form-group">
+           <label >End Date</label>
+             <div class='input-group date dateDisplay' id='endDate'>
+               <input type='text' class="form-control dateDisplay" />
+                 <span class="input-group-addon">
+                   <span class="glyphicon appColor glyphicon-calendar"></span>
+                 </span>
+               </div>
            </div>
-           </div>
-           <button id="searchBtn" type="button" title="Search up to 1000 " onclick="searchEarthquake()" data-toogle="tooltip" data-placement="bottom" class="btn btn-secondary pull-right btn-primary ">
-             <span class="glyphicon glyphicon-search"></span>
+         </form>
+       </li>
+       <li>
+        <form class="form-inline">
+          <div class="form-group">
+            <label >Magnitude</label>
+              <a href="#" data-placement="bottom" data-popover-content="#magnitudeClass" tabindex="0" data-toggle="popover" title="Earthquake Magnitude Scale" data-trigger="focus" >
+                <span class=" glyphicon  glyphicon-info-sign" ></span></a>
+                  <div class="input-group" >
+                    <span class="input-group-btn" id="minusBtn">
+                      <button type="button btn-block" class="btn  btn-default btn-number"  data-type="minus" data-field="quant[2]">
+                        <span class="glyphicon glyphicon-minus" style="color:red;"></span>
+                      </button>
+                    </span>
+                    <input type="text" name="quant[2]" id ="magnitudeInput" class="form-control input-number" value="5" min="1" max="8">
+                      <span class="input-group-btn" id="plusBtn">
+                          <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
+                            <span class="glyphicon glyphicon-plus "></span>
+                          </button>
+                        </span>
+                      </div>
+                </div>
+          </form>
+        </li>
+        <li class="pull-right">
+          <button id="searchBtn" class="btn btn-secondary btn-lg btn-primary "  onclick="searchEarthquake()" type="button" >
+            <span class="glyphicon transparent glyphicon-search "></span>
+          </button></li>
+        </ul>
+      </div>
+      </div>
+ </nav>
 
-           </button>
-      </form>
-   <hr>
-   <div class="row">
-     <div class="col-md-12">
-       <div id="map"></div>
-     </div>
-   </div>
-</main>
+  <div id="map" class="mapStyle" ></div>
+
+<div class="hidden magnitudeClassTxt" id="magnitudeClass">
+  <table border="1" class="popover-body" >
+    <tr>
+       <th>Magnitude	</th>
+       <th>Earthquake Effects</th>
+       <th>Estimated Number/Each Year
+    </th>
+    </tr>
+    <tr>
+       <td>2.5 or less</td>
+       <td>Usually not felt, but can be recorded by seismograph.</td>
+       <td>900,000</td>
+     </tr>
+     <tr>
+       <td>2.5 to 5.4</td>
+       <td>Often felt, but only causes minor damage.</td>
+       <td>30,000</td>
+     </tr>
+     <tr>
+       <td>5.5 to 6.0</td>
+       <td>Slight damage to buildings and other structures.</td>
+       <td>500</td>
+     </tr>
+     <tr>
+       <td>6.1 to 6.9</td>
+       <td>May cause a lot of damage in very populated areas.</td>
+       <td>100</td>
+     </tr>
+     <tr>
+       <td>7.0 to 7.9</td>
+       <td>Major earthquake. Serious damage.</td>
+       <td>20</td>
+     </tr>
+     <tr>
+       <td>8.0 or greater</td>
+       <td>Great earthquake. Can totally destroy communities near the epicenter.</td>
+       <td>One every 5 to 10 years</td>
+     </tr>
+    </table>
+</div>
+
 
    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -85,9 +137,6 @@
   <script type="text/javascript" src="app.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt_W8eZjMcOG03ERAjB3nXsbyYvlqs5G8&callback=initMap" async defer></script>
 
-  <script>
-
-      </script>
 
 </body>
 </html>

@@ -1,165 +1,91 @@
-@media only screen and (max-width: 480px) {
-
-  #brand{
-    display:none;
-  }
-  #logo{
-    display:block;
-  }
-    hr{
-      height: 1px;
-      color:white;
-      background-color:white;
-      border: none;
-      margin-top:65px;
-
-    }
-
+* {
+  border-radius: 0 !important;
+  -moz-border-radius:0 !important;
 }
-
-@media only screen and (min-width: 480px) {
-
-    #brand{
-      font-size:10px;
-    }
-    #logo{
-      display:none;
-    }
-    hr{
-      height: 1px;
-      color:white;
-      background-color:white;
-      border: none;
-      margin-top:65px;
-
-    }
-
-}
-@media only screen and (min-width: 768px)
-  {
-    #brand{
-      font-size:15px;
-    }
-    .form-group >label{
-      font-size:14px;
-    }
-
-    #magnitudeInput{
-      width:40px;
-    }
-
-    #endDateGroup{
-        margin-left:-10px;
-    }
-    #startDate{
-      width:130px;
-    }
-    #endDate{
-      width:130px;
-    }
-    hr{
-      height: 1px;
-      color:white;
-      background-color:white;
-      border: none;
-      margin-top:25px;
-
-    }
-
-  }
-
-
-@media only screen and (min-width: 1200px) {
-
-
-  .form-group >label{
-    margin-left:30px;
-  }
-  .form-group >.input-group{
-    margin-left:20px;
-    margin-right:20px;
-  }
-
-  #startDate{
-    width:150px;
-  }
-  #endDate{
-    width:150px;
-  }
-
-  #magnitudeInput{
-    width:150px;
-  }
-
-  }
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
-
   }
+.container-fluid{
+  margin-left: 10px;
+  margin-right:10px;
+}
+.navbar-nav  >li{
+  margin-top:12px;
+  color:white;
+}
+.navbar-brand > img{
+  display:inline-block; height:30px; margin-top:-5px;
+}
+.navbar-toggle .collapsed .btn-primary:hover {
+ background-color: transparent;
+ font-weight: 900;
+ border: 0;
+}
+.navColor {
+   background: #000428; /* For browsers that do not support gradients */
+   background: -webkit-linear-gradient(#000428, #004e92); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(#000428, #004e92); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(#000428, #004e92); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(#000428, #004e92); /* Standard syntax (must be last) */
+}
+.appColor{
+  color : #000428;
+}
+ul > li{
+  text-align: left;
+}
+.pull-right{
+  margin-right: 20px;
+}
+.form-group {
+  width:100%;
+  @media (min-width: 680px){
+    width:150px;
+  }
+}
+.form-group > label{
+  margin-right:20px;
+  margin-left:20px;
+}
+.glyphicon-search{
+  color:white;
+}
+.btn-primary {
+  background-color: transparent;
+  border: 0;
+}
 
-label {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 15px;
-    display: inline-block;
-    text-align: center;
-    padding-right :15px;
-    padding-left :15px;
-
- }​
-
- h2{
-   text-align: center;
-   font-family: 'Source Sans Pro', sans-serif;
- }
-
- hr {
-   height: 1px;
-   color:#004e92;
-   background-color:#004e92;
-   border: none;
- }
-
-
+.glyphicon-info-sign{
+  background-color:transparent;
+  color:white;
+}
+.mapStyle{
+  height: 100%;
+  margin-top:-20px;
+}
+/* popover related*/
  table, td, th {
      border: 1px solid #ddd;
      text-align: left;
- }
-
- table {
-     border-collapse: collapse;
-     width: 100%;
- }
-
+     color:#3f3f3f;
+}
  th, td {
      padding: 15px;
  }
-
-.grad1 {
-     background: #000428; /* For browsers that do not support gradients */
-     background: -webkit-linear-gradient(#000428, #004e92); /* For Safari 5.1 to 6.0 */
-     background: -o-linear-gradient(#000428, #004e92); /* For Opera 11.1 to 12.0 */
-     background: -moz-linear-gradient(#000428, #004e92); /* For Firefox 3.6 to 15 */
-     background: linear-gradient(#000428, #004e92); /* Standard syntax (must be last) */
- }
-
+a{
+  margin-right:10px;
+}
 .popover{
        max-width:600px;
 }
-
-.navbar-brand {
-     transform: translateX(-50%);
-     left: 50%;
-     position: absolute;
+.magnitudeClassTxt{
+  text:#939393;
 }
-
-#map {
-      height: 600px;
-}
-
-#searchBtn:hover .tooltiptext {
-    visibility: visible;
+.popover-title{
+  background-color: #004e92;
+  text-align: center;
 }
