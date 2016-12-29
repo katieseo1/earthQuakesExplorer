@@ -43,7 +43,7 @@ ul > li{
 }
 .form-group {
   width:100%;
-  @media (min-width: 680px){
+  @media (min-width: 800px){
     width:150px;
   }
 }
