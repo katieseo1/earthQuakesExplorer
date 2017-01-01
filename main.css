@@ -25,14 +25,14 @@ html, body {
  font-weight: 900;
  border: 0;
 }
-.navColor {
+.nav--color {
    background: #000428; /* For browsers that do not support gradients */
    background: -webkit-linear-gradient(#000428, #004e92); /* For Safari 5.1 to 6.0 */
    background: -o-linear-gradient(#000428, #004e92); /* For Opera 11.1 to 12.0 */
    background: -moz-linear-gradient(#000428, #004e92); /* For Firefox 3.6 to 15 */
    background: linear-gradient(#000428, #004e92); /* Standard syntax (must be last) */
 }
-.appColor{
+.app-color{
   color : #000428;
 }
 ul > li{
@@ -94,7 +94,7 @@ ul > li{
   background-color:transparent;
   color:white;
 }
-.mapStyle{
+.map--size{
   height: 100%;
   margin-top:-20px;
 }
@@ -113,7 +113,7 @@ a{
 .popover{
        max-width:600px;
 }
-.magnitudeClassTxt{
+.table-magnitude{
   text:#939393;
 }
 .popover-title{
