@@ -2,6 +2,7 @@
 var map;
 var markers = [];
 var bounds;
+var screenSize;
 var state = {
 	startDate: "",
 	endDate: "",
@@ -108,7 +109,7 @@ function getCircle(magnitude) {
 		path: google.maps.SymbolPath.CIRCLE,
 		fillColor: 'red',
 		fillOpacity: .2,
-		scale: Math.pow(2, magnitude) / 2,
+		scale: Math.pow(2, magnitude) / 2 * screenSize;,
 		strokeColor: 'white',
 		strokeWeight: .5
 	};
@@ -143,6 +144,7 @@ $('.btn-number').click(function(e) {
 });
 //Document Ready
 $(function() {
+	screenSize=$(window).width()/1200;
 	$("body").on("shown.bs.modal", ".modal", function() {
 		$(this).css({
 			'top': '50%',
