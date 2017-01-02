@@ -109,7 +109,7 @@ function getCircle(magnitude) {
 		path: google.maps.SymbolPath.CIRCLE,
 		fillColor: 'red',
 		fillOpacity: .2,
-		scale: Math.pow(2, magnitude) / 2 * screenSize;,
+		scale: Math.pow(2, magnitude) / 2 * screenSize,
 		strokeColor: 'white',
 		strokeWeight: .5
 	};
