@@ -1,7 +1,7 @@
 # Earthquake Explorer
 A responsive app to search earthquake information using start date/end date and its magnitude.
 
-![Screenshots](https://github.com/katieseo1/earthQuakesExplorer/blob/master/screenshot.png)
+![Screenshots](https://github.com/katieseo1/earthQuakesExplorer/blob/master/screenshot3.png)
 
 ##Summary
 Earthquake Explorer allows you to search occurrence of earthquake using date range and magnitude. The earchquake information is retrieved from the United States Geological Survey (USGS) [public API](http://earthquake.usgs.gov/fdsnws/event/1/). 
