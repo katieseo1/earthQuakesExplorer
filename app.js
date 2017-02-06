@@ -1,22 +1,22 @@
 //Goblal Variables
 var map;
 var markers = [];
-var bounds;
 var screenSize;
 var state = {
 	startDate: "",
 	endDate: "",
 	magnitude: 0
 };
+
 //Initialize Map
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 2,
 		center: {
-			lat: -33.865427,
-			lng: 151.196123
+			lat: 37.0902,
+			lng: 95.7129
 		},
-		mapTypeId: 'satellite'
+		mapTypeId: 'terrain'
 	});
 }
 //Get data from USGS API call
@@ -153,22 +153,17 @@ $(function() {
 			}
 		});
 	});
+
 	$('.dateDisplay').datepicker().on('changeDate', function(ev) {
 		$('.datepicker').hide();
 	});
+
 	$('.dateDisplay').datepicker({
 		dateFormat: 'yyyy-mm-dd',
-		atuoclose: true
+		atuoclose: true,
+		orientation: 'top auto'
 	});
+
 	$('#startDate').datepicker('setDate', new Date());
 	$('#endDate').datepicker('setDate', new Date());
-	$('[data-toggle=popover]').popover({
-		content: function() {
-			var content = $(this).attr("data-popover-content");
-			return $(content).children(".popover-body").html();
-		},
-		html: true
-	}).click(function() {
-		$(this).popover('show');
-	});
 });
