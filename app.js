@@ -54,7 +54,6 @@ function searchEarthquake() {
 	}
 	if (isNaN(magnitude)) {
 		bootbox.alert({
-			//size: 'small',
 			className: 'bootbox--size',
 			message: 'Magnitude need to be a number'
 		});
