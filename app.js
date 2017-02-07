@@ -3,8 +3,8 @@ var map;
 var markers = [];
 var screenSize;
 var state = {
-	startDate: "",
-	endDate: "",
+	startDate: '',
+	endDate: '',
 	magnitude: 0
 };
 
@@ -19,6 +19,7 @@ function initMap() {
 		mapTypeId: 'terrain'
 	});
 }
+
 //Get data from USGS API call
 function getDataFromApi(state, callback) {
 	var geoURL = 'https://earthquake.usgs.gov/fdsnws/event/1/query';
@@ -37,22 +38,24 @@ function getDataFromApi(state, callback) {
 	};
 	$.ajax(settings);
 }
+
 //Handle Search request
 function searchEarthquake() {
 	$('.navbar-collapse').collapse('hide');
-	state.startDate = $("#startDate").data('datepicker').getFormattedDate('yyyy-mm-dd');
-	state.endDate = $("#endDate").data('datepicker').getFormattedDate('yyyy-mm-dd');
+	state.startDate = $('#startDate').data('datepicker').getFormattedDate('yyyy-mm-dd');
+	state.endDate = $('#endDate').data('datepicker').getFormattedDate('yyyy-mm-dd');
 	var magnitude = $('#magnitudeInput').val();
 	if (state.startDate > state.endDate) {
 		bootbox.alert({
-			size: 'small',
+			className: 'bootbox--size',
 			message: 'Start Date should be eariler than End date'
 		});
 		return;
 	}
 	if (isNaN(magnitude)) {
 		bootbox.alert({
-			size: 'small',
+			//size: 'small',
+			className: 'bootbox--size',
 			message: 'Magnitude need to be a number'
 		});
 	} else {
@@ -60,6 +63,7 @@ function searchEarthquake() {
 		getDataFromApi(state, displayData);
 	}
 }
+
 //Remove markers from the map
 function removeMarkers() {
 	for (i = 0; i < markers.length; i++) {
@@ -67,24 +71,25 @@ function removeMarkers() {
 	}
 	markers = [];
 }
+
 //Display data on the map
 function displayData(data) {
 	removeMarkers();
 	var infowindow = new google.maps.InfoWindow({
-		content: ""
+		content: ''
 	})
 	var msg;
 	if (data.features.length == 0) {
-		msg = "No result for the given parameter";
+		msg = 'No result for the given parameter';
 	} else {
-		msg = "  " + data.features.length + "  found";
+		msg = '  ' + data.features.length + '  found';
 		if (data.features.length == 1000) {
-			msg += "(Result's limit is 1000)"
+			msg += '(Result\'s limit is 1000)'
 		}
 	}
 	bootbox.alert({
 		message: msg,
-		size: 'small'
+		className: 'bootbox--size'
 	});
 	for (var i = 0; i < data.features.length; i++) {
 		var coords = data.features[i].geometry.coordinates;
@@ -94,7 +99,7 @@ function displayData(data) {
 			icon: getCircle(data.features[i].properties.mag),
 			position: latLng,
 			map: map,
-			html: "Magnitude :" + data.features[i].properties.mag + "<br> Location:" + data.features[i].properties.place + "<br> Time:" + earthquakeDate
+			html: 'Magnitude :' + data.features[i].properties.mag + '<br> Location:' + data.features[i].properties.place + '<br> Time:' + earthquakeDate
 		});
 		markers.push(marker);
 		google.maps.event.addListener(marker, 'click', function() {
@@ -103,6 +108,7 @@ function displayData(data) {
 		});
 	}
 }
+
 //Get Circle based on magnitude
 function getCircle(magnitude) {
 	return {
@@ -114,6 +120,7 @@ function getCircle(magnitude) {
 		strokeWeight: .5
 	};
 }
+
 //Handle magnitude scale change
 $('.btn-number').click(function(e) {
 	e.preventDefault();
@@ -142,6 +149,7 @@ $('.btn-number').click(function(e) {
 	}
 	state.magnitude = input.val();
 });
+
 //Document Ready
 $(function() {
 	screenSize=$(window).width()/1200;
