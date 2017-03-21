@@ -149,20 +149,7 @@ label {
 
 /*******************Custom CSS for earthquake app *************/
 
-.floating-box {
-    float: left;
-    margin-left: 10px;
-    width: 40%;
-}
 
-.after-box {
-    clear: left;
-}
-
-.input-number {
-    margin-top: 8px;
-    margin-left: -2px;
-}
 
 .container-fluid {
     padding: 0px;
@@ -206,7 +193,6 @@ label {
 
 .info-btn {
     color: white;
-    padding-top: 40px;
 }
 
 .btn-toggle {
@@ -218,18 +204,7 @@ label {
     background-color: #000428;
 }
 
-.btn-minus {
-    color: red;
-}
 
-.btn-plus-span {
-    left: -8px;
-}
-
-.input-magnitude {
-    left: 2px;
-    top: 0px;
-}
 
 label {
     color: white;

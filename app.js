@@ -120,39 +120,10 @@ function getCircle(magnitude) {
 	};
 }
 
-//Handle magnitude scale change
-$('.btn-number').click(function(e) {
-	e.preventDefault();
-	fieldName = $(this).attr('data-field');
-	type = $(this).attr('data-type');
-	var input = $("input[name='" + fieldName + "']");
-	var currentVal = parseInt(input.val());
-	if (!isNaN(currentVal)) {
-		if (type == 'minus') {
-			if (currentVal > input.attr('min')) {
-				input.val(currentVal - 1).change();
-			}
-			if (parseInt(input.val()) == input.attr('min')) {
-				$(this).attr('disabled', true);
-			}
-		} else if (type == 'plus') {
-			if (currentVal < input.attr('max')) {
-				input.val(currentVal + 1).change();
-			}
-			if (parseInt(input.val()) == input.attr('max')) {
-				$(this).attr('disabled', true);
-			}
-		}
-	} else {
-		input.val(0);
-	}
-	state.magnitude = input.val();
-});
-
 //Document Ready
 $(function() {
 	screenSize=$(window).width()/1200;
-	$("body").on("shown.bs.modal", ".modal", function() {
+	$('body').on('shown.bs.modal', '.modal', function() {
 		$(this).css({
 			'top': '50%',
 			'margin-top': function() {
@@ -161,6 +132,9 @@ $(function() {
 		});
 	});
 
+	$('.glyphicon-info-sign').click(function() {
+	$('#magnitudeInfo').modal('show');
+});
 	$('.dateDisplay').datepicker().on('changeDate', function(ev) {
 		$('.datepicker').hide();
 	});

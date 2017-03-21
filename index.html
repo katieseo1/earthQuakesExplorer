@@ -1,214 +1,144 @@
 <!DOCTYPE html>
-
 <html lang='en'>
 <head>
-  <meta charset='utf-8'>
-  <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-  <meta content='width=device-width, shrink-to-fit=no, initial-scale=1' name='viewport'>
-  <meta content='earthquake' name='description'>
-  <meta content='' name='author'>
-
-  <title>Earthquake Explorer</title>
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css' rel='stylesheet'><!-- Bootstrap Core CSS -->
-  <link href='css/bootstrap.min.css' rel='stylesheet'><!-- Custom CSS -->
-  <link href='css/simple-sidebar.css' rel='stylesheet'>
+	<meta charset='utf-8'>
+	<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+	<meta content='width=device-width, shrink-to-fit=no, initial-scale=1' name='viewport'>
+	<meta content='earthquake' name='description'>
+	<meta content='' name='author'>
+	<title>Earthquake Explorer</title>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css' rel='stylesheet'><!-- Bootstrap Core CSS -->
+	<link href='css/bootstrap.min.css' rel='stylesheet'><!-- Custom CSS -->
+	<link href='css/simple-sidebar.css' rel='stylesheet'>
 </head>
-
 <body>
-  <div id='wrapper'>
-    <!-- Sidebar -->
-
-
-    <div id='sidebar-wrapper'>
-      <ul class='sidebar-nav'>
-        <li class='sidebar-brand'>
-          <span><img alt='logo' class='img-responsive logo' src='logo.png'> <label>Earthquake Explorer</label></span>
-
-          <hr>
-        </li>
-
-
-        <li style="list-style: none; display: inline">
-          <div class='panel panel-default'>
-            <div class='panel-body'>
-              <div class='floating-box'>
-                <label>Magnitude</label>
-              </div>
-
-
-              <div class='floating-box'>
-                <a class='info-btn btn-lg pull-right' data-target='#magnitudeInfo' data-toggle='modal' href='#'><span class=' glyphicon glyphicon-info-sign'></span></a>
-              </div>
-
-
-              <div class='after-box'>
-              </div>
-
-
-             <form class='form-inline'>
-               <div class='form-group'>
-                 <div class='input-group' >
-                   <span class='input-group-btn' id='minusBtn'  >
-                      <button type='button' class='btn  btn-default btn-number'  data-type='minus' data-field='quant[2]'>
-                        <span class='glyphicon glyphicon-minus btn-minus' ></span>
-                      </button>
-                    </span>
-                    <input type='text' name='quant[2]'  id ='magnitudeInput' class='form-control input-number input-magnitude' value='5' min='1' max='8'>
-                      <span class='input-group-btn btn-plus-span' id='plusBtn'  >
-                        <button type='button' class='btn btn-default btn-number'  data-type='plus' data-field='quant[2]'>
-                            <span class='glyphicon glyphicon-plus '></span>
-                        </button>
-                      </span>
-                  </div>
-                </div>
-             </form>
-              <label>Start Date</label>
-
-              <form class='form-inline'>
-                <div class='form-group'>
-                  <div class='input-group date dateDisplay' id='startDate'>
-                    <input class='form-control dateDisplay datepicker-orient-top' data-date-orientation='top auto' type='text'> <span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span>
-                  </div>
-                </div>
-              </form>
-              <label>End Date</label>
-
-              <form class='form-inline'>
-                <div class='form-group'>
-                  <div class='input-group date dateDisplay' id='endDate'>
-                    <input class='form-control dateDisplay' type='text'> <span class='input-group-addon'><span class='glyphicon appColor glyphicon-calendar'></span></span>
-                  </div>
-                </div>
-              </form>
-              <button class='btn btn-search btn-block btn-primary' id='searchBtn' onclick='searchEarthquake()' type='button'><span class='glyphicon transparent glyphicon-search'></span></button>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
-    <!-- Page Content -->
-
-
-    <div id='page-content-wrapper'>
-      <div class='container-fluid'>
-        <a class='btn btn-default btn-toggle' href='#menu-toggle' id='menu-toggle'>Toggle Menu</a>
-
-        <div class='google-map' id='map'>
-        </div>
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
-
-
-    <div class='modal fade' id='magnitudeInfo' role='dialog'>
-      <div class='modal-dialog'>
-        <!-- Modal content-->
-
-
-        <div class='modal-content'>
-          <div class='modal-header'>
-            <button class='close' data-dismiss='modal' type='button'>&times;</button>
-
-            <h4 class='modal-title'>Magnitude Information</h4>
-          </div>
-
-
-          <div class='modal-body'>
-            <table class='table'>
-              <tr>
-                <th>Magnitude</th>
-
-                <th>Earthquake Effects</th>
-
-                <th>Estimated Number/Each Year</th>
-              </tr>
-
-
-              <tr>
-                <td>2.5 or less</td>
-
-                <td>Usually not felt, but can be recorded by seismograph.</td>
-
-                <td>900,000</td>
-              </tr>
-
-
-              <tr>
-                <td>2.5 to 5.4</td>
-
-                <td>Often felt, but only causes minor damage.</td>
-
-                <td>30,000</td>
-              </tr>
-
-
-              <tr>
-                <td>5.5 to 6.0</td>
-
-                <td>Slight damage to buildings and other structures.</td>
-
-                <td>500</td>
-              </tr>
-
-
-              <tr>
-                <td>6.1 to 6.9</td>
-
-                <td>May cause a lot of damage in very populated areas.</td>
-
-                <td>100</td>
-              </tr>
-
-
-              <tr>
-                <td>7.0 to 7.9</td>
-
-                <td>Major earthquake. Serious damage.</td>
-
-                <td>20</td>
-              </tr>
-
-
-              <tr>
-                <td>8.0 or greater</td>
-
-                <td>Great earthquake. Can totally destroy communities near the epicenter.</td>
-
-                <td>One every 5 to 10 years</td>
-              </tr>
-            </table>
-          </div>
-
-
-          <div class='modal-footer'>
-            <button class='btn btn-default' data-dismiss='modal' type='button'>Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /#wrapper -->
-  <!-- jQuery -->
-  <script src='js/jquery.js'>
-  </script> <!-- Bootstrap Core JavaScript -->
-   
-  <script src='js/bootstrap.min.js'>
-  </script> 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js'>
-  </script> 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js'>
-  </script> 
-  <script src='app.js' type='text/javascript'>
-  </script> 
-  <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBt_W8eZjMcOG03ERAjB3nXsbyYvlqs5G8&callback=initMap'>
-  </script> <!-- Menu Toggle Script -->
-   
-  <script>
-     $('#menu-toggle').click(function(e) {
-         e.preventDefault();
-         $('#wrapper').toggleClass('toggled');
-     });
-  </script>
+	<div id='wrapper'>
+		<!-- Sidebar -->
+		<div id='sidebar-wrapper'>
+			<ul class='sidebar-nav'>
+				<li class='sidebar-brand'>
+					<span><img alt='logo' class='img-responsive logo' src='logo.png'> <label>Earthquake Explorer</label></span>
+					<hr>
+				</li>
+				<li style="list-style: none; display: inline">
+					<div class='panel panel-default'>
+						<div class='panel-body'>
+							<label> Magnitude</label>
+							<form class='form-inline'>
+								<div class='form-group'>
+									<div class='input-group'>
+										<input class='form-control magnitude-scale input-magnitude' id ='magnitudeInput' max='8' min='1' type='text'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-info-sign magnitude-info'>
+											</span>
+										</span>
+									</div>
+								</div>
+							</form>
+							<label>Start Date</label>
+							<form class='form-inline'>
+								<div class='form-group'>
+									<div class='input-group date dateDisplay' id='startDate'>
+										<input class='form-control dateDisplay datepicker-orient-top' data-date-orientation='top auto' type='text'>
+										<span class='input-group-addon'>
+											<span class='glyphicon glyphicon-calendar'>
+											</span>
+										</span>
+									</div>
+								</div>
+							</form>
+							<label>End Date</label>
+							<form class='form-inline'>
+								<div class='form-group'>
+									<div class='input-group date dateDisplay' id='endDate'>
+										<input class='form-control dateDisplay' type='text'> <span class='input-group-addon'><span class='glyphicon appColor glyphicon-calendar'></span></span>
+									</div>
+								</div>
+							</form><button class='btn btn-search btn-lg pull-right btn-primary' id='searchBtn' onclick='searchEarthquake()' type='button'><span class='glyphicon transparent glyphicon-search'></span></button>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div><!-- /#sidebar-wrapper -->
+		<!-- Page Content -->
+		<div id='page-content-wrapper'>
+			<div class='container-fluid'>
+				<a class='btn btn-default btn-toggle' href='#menu-toggle' id='menu-toggle'>Toggle Menu</a>
+				<div class='google-map' id='map'></div>
+			</div>
+		</div><!-- /#page-content-wrapper -->
+		<div class='modal fade' id='magnitudeInfo' role='dialog'>
+			<div class='modal-dialog'>
+				<!-- Modal content-->
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<button class='close' data-dismiss='modal' type='button'>&times;</button>
+						<h4 class='modal-title'>Magnitude Information</h4>
+					</div>
+					<div class='modal-body'>
+						<table class='table'>
+							<tr>
+								<th>Magnitude</th>
+								<th>Earthquake Effects</th>
+								<th>Estimated Number/Each Year</th>
+							</tr>
+							<tr>
+								<td>2.5 or less</td>
+								<td>Usually not felt, but can be recorded by seismograph.</td>
+								<td>900,000</td>
+							</tr>
+							<tr>
+								<td>2.5 to 5.4</td>
+								<td>Often felt, but only causes minor damage.</td>
+								<td>30,000</td>
+							</tr>
+							<tr>
+								<td>5.5 to 6.0</td>
+								<td>Slight damage to buildings and other structures.</td>
+								<td>500</td>
+							</tr>
+							<tr>
+								<td>6.1 to 6.9</td>
+								<td>May cause a lot of damage in very populated areas.</td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>7.0 to 7.9</td>
+								<td>Major earthquake. Serious damage.</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>8.0 or greater</td>
+								<td>Great earthquake. Can totally destroy communities near the epicenter.</td>
+								<td>One every 5 to 10 years</td>
+							</tr>
+						</table>
+					</div>
+					<div class='modal-footer'>
+						<button class='btn btn-default' data-dismiss='modal' type='button'>Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- /#wrapper -->
+	<!-- jQuery -->
+	<script src='js/jquery.js'>
+	</script> <!-- Bootstrap Core JavaScript -->
+	<script src='js/bootstrap.min.js'>
+	</script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js'>
+	</script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js'>
+	</script>
+	<script src='app.js' type='text/javascript'>
+	</script>
+	<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBt_W8eZjMcOG03ERAjB3nXsbyYvlqs5G8&callback=initMap'>
+	</script> <!-- Menu Toggle Script -->
+	<script>
+	    $('#menu-toggle').click(function(e) {
+	        e.preventDefault();
+	        $('#wrapper').toggleClass('toggled');
+	    });
+	</script>
 </body>
 </html>
