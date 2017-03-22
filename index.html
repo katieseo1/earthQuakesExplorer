@@ -10,7 +10,7 @@
   <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css' rel='stylesheet'>
   <link href='css/bootstrap.min.css' rel='stylesheet'>
   <link href='css/simple-sidebar.css' rel='stylesheet'>
-  <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
   <div id='wrapper'>
@@ -25,27 +25,34 @@
           <div class='panel panel-default'>
             <div class='panel-body'>
               <label>Magnitude</label>
-              <form class='form-inline'>
                 <div class='form-group'>
                   <div class='input-group'>
-                    <input class='form-control magnitude-scale input-magnitude' id='magnitudeInput' max='8' min='1' type='text'> <span class='input-group-addon'><span class='glyphicon glyphicon-info-sign magnitude-info'></span></span>
+                    <input class='form-control magnitude-scale input-magnitude' value='5' id='magnitudeInput' max='8' min='1' type='text'>
+                    <span class='input-group-addon'>
+                      <span class='glyphicon glyphicon-info-sign magnitude-info'></span></span>
                   </div>
                 </div>
-              </form><label>Start Date</label>
-              <form class='form-inline'>
+              <label>Start Date</label>
                 <div class='form-group'>
                   <div class='input-group date dateDisplay' id='startDate'>
-                    <input class='form-control dateDisplay datepicker-orient-top' data-date-orientation='top auto' type='text'> <span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span>
+                    <input class='form-control dateDisplay datepicker-orient-top' data-date-orientation='top auto' type='text'>
+                    <span class='input-group-addon'>
+                      <span class='glyphicon glyphicon-calendar'>
+                      </span>
+                    </span>
                   </div>
-                </div>
-              </form><label>End Date</label>
-              <form class='form-inline'>
+              <label>End Date</label>
                 <div class='form-group'>
                   <div class='input-group date dateDisplay' id='endDate'>
-                    <input class='form-control dateDisplay' type='text'> <span class='input-group-addon'><span class='glyphicon appColor glyphicon-calendar'></span></span>
+                    <input class='form-control dateDisplay' type='text'>
+                    <span class='input-group-addon'>
+                      <span class='glyphicon appColor glyphicon-calendar'>
+                      </span>
+                    </span>
                   </div>
                 </div>
-              </form><button class='btn btn-search btn-lg pull-right btn-primary' id='searchBtn' onclick='searchEarthquake()' type='button'><span class='glyphicon transparent glyphicon-search'></span></button>
+              <button class='btn btn-search btn-block pull-right btn-primary' id='searchBtn' onclick='searchEarthquake()' type='button'>
+                <span class='glyphicon transparent glyphicon-search'></span> Search </button>
             </div>
           </div>
         </li>

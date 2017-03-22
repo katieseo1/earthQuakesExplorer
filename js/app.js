@@ -135,6 +135,8 @@ $(function() {
     atuoclose: true,
     orientation: 'top auto'
   });
-  $('#startDate').datepicker('setDate', new Date());
+  var pastDate = new Date();
+  pastDate.setDate(pastDate.getDate() - 7);
+  $('#startDate').datepicker('setDate', pastDate);
   $('#endDate').datepicker('setDate', new Date());
 });
