@@ -139,4 +139,5 @@ $(function() {
   pastDate.setDate(pastDate.getDate() - 7);
   $('#startDate').datepicker('setDate', pastDate);
   $('#endDate').datepicker('setDate', new Date());
+  searchEarthquake();
 });
